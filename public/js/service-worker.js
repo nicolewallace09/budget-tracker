@@ -1,14 +1,14 @@
 // global constants 
-const APP_PREFIX = 'Budget-Tracker-';     
+const APP_PREFIX = 'BudgetTracker-';     
 const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
 // array of files to cache
 const FILES_TO_CACHE = [
     '../index.html',
-    '../css/style.css',
     './index.js',
     './idb.js',
+    '../css/style.css',
     '../icons/icon-72x72.png',
     '../icons/icon-96x96.png',
     '../icons/icon-128x128.png',
@@ -56,11 +56,9 @@ self.addEventListener('fetch', function (e) {
       caches.match(e.request).then(function (request) {
         if (request) { // if cache is available, respond with cache
           console.log('responding with cache : ' + e.request.url)
-        //   console.log(e.request.url)
           return request
         } else {       // if there are no cache, try fetching request
           console.log('file is not cached, fetching : ' + e.request.url)
-        //   console.log(e.request.url)
           return fetch(e.request)
         }
       })
