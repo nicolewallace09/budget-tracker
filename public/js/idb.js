@@ -30,10 +30,10 @@ function saveRecord(record) {
     const transaction = db.transaction(['new_transaction'], 'readwrite');
   
     // access the object store 
-    const transactionObjectStore = transaction.objectStore('new_transaction');
+    const budgetObjectStore = transaction.objectStore('new_transaction');
   
     // add record to your store with add method
-    transactionObjectStore.add(record);
+    budgetObjectStore.add(record);
 };
 
 // function that will handle collecting all of the data 
@@ -42,10 +42,10 @@ function uploadTransaction() {
     const transaction = db.transaction(['new_transaction'], 'readwrite');
   
     // access your object store
-    const transactionObjectStore = transaction.objectStore('new_transaction');
+    const budgetObjectStore = transaction.objectStore('new_transaction');
   
     // get all transactions from store and set to a variable
-    const getAll = transactionObjectStore.getAll();
+    const getAll = budgetObjectStore.getAll();
   
     // upon a successful .getAll() execution, run this function
     getAll.onsuccess = function() {
@@ -67,9 +67,9 @@ function uploadTransaction() {
           // open one more transaction
           const transaction = db.transaction(['new_transaction'], 'readwrite');
           // access the object store
-          const transactionObjectStore = transaction.objectStore('new_transaction');
+          const budgetObjectStore = transaction.objectStore('new_transaction');
           // clear all items in your store
-          transactionObjectStore.clear();
+          budgetObjectStore.clear();
 
           alert('All saved transactions has been submitted!');
         })
