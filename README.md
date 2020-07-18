@@ -2,7 +2,7 @@
 ![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description 
-This project is an application that allows users to add expenses and deposits to their budget with or without a connection. If the user enters transactions offline, the changes will be reflected when they're brought back online. This application is deployed on Heroku. 
+This project is an application that allows users to add expenses and deposits to their budget with or without a connection. If the user enters transactions offline, the changes will be reflected when they're brought back online. This application uses IndexDB, Service workers, and Web Manifest for offline functionality and is deployed on Heroku. 
 
 ## Table of Contents
 * [Installation](#installation)
@@ -13,11 +13,12 @@ This project is an application that allows users to add expenses and deposits to
 * [Questions](#questions)
 
 ## Installation 
-The user should clone the repository from GitHub. This application requires Node.js, Express.js, and Sequelize. To connect to the database run mysql -u root -p and enter password from .env file. Then source the schema.sql. To seed the file run npm run seed. Finally to connect to the server run npm start. 
+The user should clone the repository from GitHub and install dependencies. To run server, run `npm start`. 
 
 ## Usage 
-This application will allow users to view, add, edit, and delete categories, products, and tags.<br>
-<img scr='assets/img/screen.png'>
+This application will allow users to create new transactions whether it's a deposit or withdraw, with or without internet connection.<br>
+Please view deployed application on [Heroku](https://nw-budget-app.herokuapp.com/)<br>
+<img scr='public/screen.png'>
 
 ## License 
 This project is license under MIT
